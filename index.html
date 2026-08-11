@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Independent TA token analytics: trading volume, donations made, and treasury balance.">
+  <title>TA Metrics — Independent TA Fund Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="brand"><span class="mark">TA</span><span>TA METRICS</span><span class="independent">INDEPENDENT</span></div>
+      <div class="live"><i></i><span id="status">REFRESHING</span></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">PUBLIC DATA · SIMPLE VIEW</p>
+        <h1>TA activity,<br><span>without the noise.</span></h1>
+        <p class="lede">An independent dashboard tracking TA token trading volume, published donations, and the current treasury balance.</p>
+
+        <div class="period" role="group" aria-label="Dashboard time range">
+          <button class="period-btn active" data-range="24h">24H</button>
+          <button class="period-btn" data-range="7d">7D</button>
+          <button class="period-btn" data-range="30d">30D</button>
+        </div>
+      </section>
+
+      <section class="cards">
+        <article class="card primary">
+          <div class="card-top"><span class="label">TRADING VOLUME</span><span class="period-label" id="volumePeriod">24H</span></div>
+          <div class="value" id="volume">—</div>
+          <div class="sub" id="volumeSub">Loading market data…</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="label">DONATIONS MADE</span><span class="period-label" id="donationPeriod">24H</span></div>
+          <div class="value" id="donations">—</div>
+          <div class="sub" id="donationsSub">Published contributions</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="label">TREASURY BALANCE</span><span class="period-label">NOW</span></div>
+          <div class="value" id="treasury">—</div>
+          <div class="sub">Current published treasury balance</div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">ACTIVITY</p>
+            <h2 id="chartTitle">Last 24 hours</h2>
+          </div>
+          <div class="legend"><span class="legend-dot"></span> Donations</div>
+        </div>
+        <div id="chart" class="chart"></div>
+        <div class="chart-note" id="chartNote">Published donation activity for the selected period.</div>
+      </section>
+
+      <section class="details">
+        <div class="statline"><span>Total published donations</span><strong id="allTimeDonations">—</strong></div>
+        <div class="statline"><span>Accounts funded</span><strong id="accountsFunded">—</strong></div>
+        <div class="statline"><span>TA market pairs tracked</span><strong id="marketPairs">—</strong></div>
+      </section>
+
+      <section class="verify">
+        <div>
+          <p class="eyebrow">METHODOLOGY</p>
+          <h2>Independent, verifiable data.</h2>
+          <p>Market data comes from public DEX data. Donation and treasury figures are derived from TA Fund’s published transparency records. This site is independently operated and is not the TA Fund website.</p>
+        </div>
+        <div class="links">
+          <a href="https://ta.fund/transparency" target="_blank" rel="noreferrer">Verify donations & treasury <b>↗</b></a>
+          <a href="https://dexscreener.com/robinhood/0x9ca1cc0c90d97b4f36c5e2232d4fbd705a73c65d" target="_blank" rel="noreferrer">Verify market data <b>↗</b></a>
+          <a href="https://robinhoodchain.blockscout.com/address/0x1F41B0441ae6E00633Bd2E6607218d370DA4896e" target="_blank" rel="noreferrer">View treasury on-chain <b>↗</b></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>TA Metrics</div>
+      <div class="muted">Independent analytics dashboard · Not operated by TA Fund or Robinhood Markets, Inc.</div>
+      <code>0x9cA1…c65d</code>
+    </footer>
+  </div>
+<script src="app.js"></script>
+</body>
+</html>
